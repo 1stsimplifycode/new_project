@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Business Model Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Sustainable Business Model Generator</h1>
+        
+        <div>
+            <label for="industry">Industry:</label>
+            <input type="text" id="industry" placeholder="e.g. Manufacturing">
+        </div>
+        
+        <div>
+            <label for="energy">Annual Energy Consumption (kWh):</label>
+            <input type="number" id="energy" placeholder="e.g. 5000">
+        </div>
+        
+        <div>
+            <label for="goals">Sustainability Goals:</label>
+            <input type="text" id="goals" placeholder="e.g. Go green, Reduce waste">
+        </div>
+
+        <div>
+            <label for="sdg">Select SDG Goal:</label>
+            <select id="sdg">
+                <option value="">Select an SDG</option>
+                <option value="1">No Poverty</option>
+                <option value="2">Zero Hunger</option>
+                <option value="3">Good Health and Well-Being</option>
+                <option value="4">Quality Education</option>
+                <option value="5">Gender Equality</option>
+                <option value="6">Clean Water and Sanitation</option>
+                <option value="7">Affordable and Clean Energy</option>
+                <option value="8">Decent Work and Economic Growth</option>
+                <option value="9">Industry, Innovation, and Infrastructure</option>
+                <option value="10">Reduced Inequality</option>
+                <option value="11">Sustainable Cities and Communities</option>
+                <option value="12">Responsible Consumption and Production</option>
+                <option value="13">Climate Action</option>
+                <option value="14">Life Below Water</option>
+                <option value="15">Life on Land</option>
+                <option value="16">Peace, Justice, and Strong Institutions</option>
+                <option value="17">Partnerships for the Goals</option>
+            </select>
+        </div>
+
+        <button onclick="generateBusinessModel()">Generate Business Model</button>
+        
+        <div id="output"></div>
+        
+        <div>
+            <button id="downloadBtn" style="display:none;">Download Report</button>
+            <button id="quizBtn">Take a Sustainability Quiz</button>
+        </div>
+
+        <div id="quizSection" style="display:none;">
+            <h3>Sustainability Quiz</h3>
+            <form id="quizForm">
+                <label for="quizQ1">1. What is the main goal of sustainable development?</label><br>
+                <input type="radio" name="q1" value="1"> To maintain economic growth without concern for the environment<br>
+                <input type="radio" name="q1" value="2"> To meet the needs of the present without compromising the ability of future generations to meet their own needs<br>
+                <input type="radio" name="q1" value="3"> To eliminate poverty completely<br>
+
+                <label for="quizQ2">2. Which of the following is a renewable resource?</label><br>
+                <input type="radio" name="q2" value="1"> Coal<br>
+                <input type="radio" name="q2" value="2"> Solar energy<br>
+                <input type="radio" name="q2" value="3"> Natural gas<br>
+
+                <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+            </form>
+        </div>
+
+        <div id="successStories" style="display:none;">
+            <h3>Success Stories</h3>
+            <ul>
+                <li>Company A reduced its carbon footprint by 30% in two years by adopting solar energy.</li>
+                <li>Company B improved employee wellness and productivity through a comprehensive health program.</li>
+                <li>Company C launched a circular economy initiative, recycling 70% of its waste.</li>
+            </ul>
+        </div>
+        
+        <div id="resources" style="display:none;">
+            <h3>Related Resources</h3>
+            <ul>
+                <li><a href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/" target="_blank">Sustainable Consumption and Production - UN</a></li>
+                <li><a href="https://www.wbcsd.org/" target="_blank">World Business Council for Sustainable Development</a></li>
+                <li><a href="https://www.epa.gov/sustainability" target="_blank">Sustainability - EPA</a></li>
+            </ul>
+        </div>
+        
+        <canvas id="myChart" style="display:none;"></canvas>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
